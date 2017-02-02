@@ -1,0 +1,19 @@
+Options +SymLinksIfOwnerMatch
+RewriteEngine on
+
+RewriteRule ^favicon.ico$ https://%{HTTP_HOST}/assets/img/favicon.ico [R=301,L]
+
+RewriteRule ^image/([a-z0-9]*)/$ /protected/image.php?id=$1 [L]
+
+RewriteRule ^error/$ /protected/error.php [L]
+RewriteRule ^save/$ /protected/save.php [L]
+
+ErrorDocument 400 /error/
+ErrorDocument 403 /error/
+ErrorDocument 404 /error/
+ErrorDocument 405 /error/
+ErrorDocument 408 /error/
+ErrorDocument 500 /error/
+ErrorDocument 501 /error/
+ErrorDocument 502 /error/
+ErrorDocument 504 /error/
